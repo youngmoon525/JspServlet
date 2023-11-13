@@ -24,11 +24,11 @@
             <!-- Navigation-->
             <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
                 <div class="container px-5">
-                    <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">JspServletTag</span></a>
+                    <a class="navbar-brand" href="index.jsp"><span class="fw-bolder text-primary">JspServletTag</span></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
-                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="index.jsp">Home</a></li>
                             <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
                             <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
                             <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
@@ -179,7 +179,7 @@
             </header>
             <div class="container px-5 my-5">
                 <div class="text-center mb-5">
-                    <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Resume</span></h1>
+                    <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">스크립트태그(Script Tag)</span></h1>
                 </div>
                 <div class="row gx-5 justify-content-center">
                     <div class="col-lg-11 col-xl-9 col-xxl-8">
@@ -187,38 +187,58 @@
                         <section>
                            
                             <!-- Experience Card 1-->
-                            <div class="card shadow border-0 rounded-4 mb-5">
-                                <div class="card-body p-5">
+                            <div class="card shadow border-0 rounded-4 mb-4">
+                                <div class="card-body p-3">
                                     <div class="row align-items-center gx-5">
                                         <div class="col text-center text-lg-start mb-4 mb-lg-0">
                                             <div class="bg-light p-4 rounded-4">
-                                                <div class="text-primary fw-bolder mb-2">2019 - Present</div>
-                                                <div class="small fw-bolder">Web Developer</div>
-                                                <div class="small text-muted">Stark Industries</div>
-                                                <div class="small text-muted">Los Angeles, CA</div>
+                                                <div class="text-primary fw-bolder mb-2">1.태그 처음 사용</div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-8"><div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus laudantium, voluptatem quis repellendus eaque sit animi illo ipsam amet officiis corporis sed aliquam non voluptate corrupti excepturi maxime porro fuga.</div></div>
+                                        <div class="col-lg-8"><div>
+                                        <a href="01.script/Ex00Into.jsp">태그와 변수이용</a>
+                                        <p></p>
+                                        <a href="01.script/Ex01Var.jsp">여러 변수 선언 , 할당 , 출력</a>
+                                        </div></div>
                                     </div>
                                 </div>
                             </div>
                             <!-- Experience Card 2-->
-                            <div class="card shadow border-0 rounded-4 mb-5">
-                                <div class="card-body p-5">
+                            <div class="card shadow border-0 rounded-4 mb-4">
+                                <div class="card-body p-3">
                                     <div class="row align-items-center gx-5">
                                         <div class="col text-center text-lg-start mb-4 mb-lg-0">
                                             <div class="bg-light p-4 rounded-4">
-                                                <div class="text-primary fw-bolder mb-2">2017 - 2019</div>
-                                                <div class="small fw-bolder">SEM Specialist</div>
-                                                <div class="small text-muted">Wayne Enterprises</div>
-                                                <div class="small text-muted">Gotham City, NY</div>
+                                                <div class="text-primary fw-bolder mb-2">2.제어문</div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-8"><div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus laudantium, voluptatem quis repellendus eaque sit animi illo ipsam amet officiis corporis sed aliquam non voluptate corrupti excepturi maxime porro fuga.</div></div>
+                                        <div class="col-lg-8"><div>
+                                        <a href="01.script/Ex02For.jsp">1.For문</a>
+                                        <p></p>
+                                        <a href="01.script/Ex02If.jsp">2.If문</a>
+                                        </div></div>
                                     </div>
                                 </div>
                             </div>
-                        </section>
+                            <!-- Experience Card 3-->
+                    		<div class="card shadow border-0 rounded-4 mb-4">
+                                <div class="card-body p-3">
+                                    <div class="row align-items-center gx-5">
+                                        <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                            <div class="bg-light p-4 rounded-4">
+                                                <div class="text-primary fw-bolder mb-2">3.실습</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8"><div>
+                                        <a href="01.script/Ex03TestForIf.jsp">1.For문If문 합구하기</a>
+                                        <p></p>
+                                        <a href="01.script/Ex04ForFor.jsp">2.중첩For문</a>
+                                        </div></div>
+                                    </div>
+                                </div>
+                            </div>
+                    
+                         </section>
                         <!-- Education Section-->
                         <section>
                             <h2 class="text-secondary fw-bolder mb-4">Education</h2>
