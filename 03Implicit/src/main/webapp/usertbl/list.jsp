@@ -10,6 +10,9 @@
 <body>
 <%@ include file="/include/header.jsp"%>
 
+
+
+<a href="newpage" class="btn btn-info">추가화면</a>
 	<table class="table">
   <thead class="thead-dark">
     <tr>
@@ -17,6 +20,7 @@
       <th scope="col">출생년도</th>
       <th scope="col">주소</th>
       <th scope="col">전화번호</th>
+      <th scope="col">삭제</th>
     </tr>
   </thead>
   <tbody>
@@ -26,6 +30,7 @@
       <td>${dto.birthyear}</td>
       <td>${dto.address}</td>
       <td>${dto.mobile}</td>
+      <td><a href="delete?username=${dto.username}" class="btn btn-danger">삭제</a></td>
     </tr>
 	</c:forEach>
   </tbody>
