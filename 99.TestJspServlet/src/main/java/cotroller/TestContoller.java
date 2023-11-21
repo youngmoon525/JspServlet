@@ -44,6 +44,11 @@ public class TestContoller extends HttpServlet {
 		rd.forward(req, resp);
 	}
 	
+	//View(jsp) -> Servlet(Controller) -> View(jsp) -> Servlet(Controller) -> Servlet(Controller)
+	//->View(jsp)
+	//+Model(Db처리나 비지니스 로직 처리)
+	
+	
 	//@RequestMapping("/insert.te")
 	//String update(){
 		// return "update";

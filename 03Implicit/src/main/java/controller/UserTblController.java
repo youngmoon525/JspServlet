@@ -33,6 +33,7 @@ public class UserTblController extends HttpServlet {
 		//사용자가 실제로 다른 페이지로 이동하여 , "주소표시줄의 URL이 변경됨"
 		
 		
+		
 		UserTblDAO dao = new UserTblDAO();
 		if(req.getServletPath().equals("/list")) {
 			ArrayList<UserTblDTO> list = dao.selectList();
