@@ -31,9 +31,17 @@ public class MybatisTblController extends HttpServlet {
 			resp.sendRedirect("select.mytbl");
 			
 		}else if(path.equals("/update.mytbl")) {//U
+			MybatisTblVO vo = new MybatisTblVO();
+			vo.setCol1(req.getParameter("col1"));
+			vo.setCol2(req.getParameter("col2"));
+			vo.setCol3(req.getParameter("col3"));
+			System.out.println(dao.update(vo));
 			resp.sendRedirect("select.mytbl");
 			
 		}else if(path.equals("/delete.mytbl")) {//D
+			MybatisTblVO vo = new MybatisTblVO();
+			vo.setCol1(req.getParameter("col1"));
+			System.out.println(dao.delete(vo));
 			resp.sendRedirect("select.mytbl");
 			
 		}else if(path.equals("/select.mytbl")) {//READ

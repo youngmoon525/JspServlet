@@ -32,10 +32,10 @@ public class MybatisTblDAO {
 	}
 	
 	public int update(MybatisTblVO vo) {
-		return sql.update("" , vo);
+		return sql.update("mytbl.update" , vo);
 	}
 	public int delete(MybatisTblVO vo) {
-		return sql.delete("" , vo);
+		return sql.delete("mytbl.delete" , vo);
 	}
 	public List<MybatisTblVO> select(){
 		List<MybatisTblVO> sList = new ArrayList<>();
@@ -43,9 +43,9 @@ public class MybatisTblDAO {
 		
 		//클래스는 객체를 만들기위한 도구 또는 틀
 		//↑클래스로 부터 만들어진 결과물 객체 
-		MybatisTblVO 객체 = new MybatisTblVO();
-		sList.add(객체);
-		sList.add(new MybatisTblVO());
+		//MybatisTblVO 객체 = new MybatisTblVO();
+		//sList.add(객체);
+		//sList.add(new MybatisTblVO());
 		
 		List<MybatisTblVO> list = 
 				sql.selectList("mytbl.select");

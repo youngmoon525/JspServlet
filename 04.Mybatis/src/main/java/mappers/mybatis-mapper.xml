@@ -9,4 +9,10 @@
 	<select id="select" resultType="mybatis.MybatisTblVO">
 		SELECT * FROM MYBATISTBL
 	</select>
+	<update id="update">
+		update MYBATISTBL set col1=#{col1} , col2=#{col2} , col3=#{col3}
+	</update>
+	<delete id="delete">
+		delete from MYBATISTBL where col1=#{col1}
+	</delete>
 </mapper>
