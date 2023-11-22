@@ -2,6 +2,7 @@ package mybatis;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.ibatis.io.Resources;
@@ -37,7 +38,17 @@ public class MybatisTblDAO {
 		return sql.delete("" , vo);
 	}
 	public List<MybatisTblVO> select(){
-		List<MybatisTblVO> list = sql.selectList("");
+		List<MybatisTblVO> sList = new ArrayList<>();
+		//<ClassType,Object> <= 해당하는 타입의 객체만 수집하겠다.
+		
+		//클래스는 객체를 만들기위한 도구 또는 틀
+		//↑클래스로 부터 만들어진 결과물 객체 
+		MybatisTblVO 객체 = new MybatisTblVO();
+		sList.add(객체);
+		sList.add(new MybatisTblVO());
+		
+		List<MybatisTblVO> list = 
+				sql.selectList("mytbl.select");
 		return list;
 	}
 	

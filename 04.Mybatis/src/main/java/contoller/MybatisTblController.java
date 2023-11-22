@@ -1,6 +1,9 @@
 package contoller;
 
 import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,22 +23,24 @@ public class MybatisTblController extends HttpServlet {
 		String path = req.getServletPath();
 		MybatisTblDAO dao = new MybatisTblDAO();
 		if(path.equals("/insert.mytbl")) {//CREATE
-			
 			MybatisTblVO vo = new MybatisTblVO();
 			vo.setCol1(req.getParameter("col1"));
 			vo.setCol2(req.getParameter("col2"));
 			vo.setCol3(req.getParameter("col3"));
 			System.out.println(dao.insert(vo));
+			resp.sendRedirect("select.mytbl");
 			
 		}else if(path.equals("/update.mytbl")) {//U
-			//1.DAO호출
-			//2.페이지 요청(URL요청)
-			System.out.println("update까지옴");
-		}else if(path.equals("/delete.mytbl")) {//D
-			//1.DAO호출
-			//2.페이지 요청(URL요청)
-		}else if(path.equals("/select.mytbl")) {//READ
+			resp.sendRedirect("select.mytbl");
 			
+		}else if(path.equals("/delete.mytbl")) {//D
+			resp.sendRedirect("select.mytbl");
+			
+		}else if(path.equals("/select.mytbl")) {//READ
+			RequestDispatcher rd = req.getRequestDispatcher("index.jsp");
+			List<MybatisTblVO> list = dao.select();
+			req.setAttribute("list", list);
+			rd.forward(req, resp);
 		}
 	}
 }

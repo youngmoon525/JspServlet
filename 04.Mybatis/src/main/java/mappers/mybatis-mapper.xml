@@ -6,4 +6,7 @@
 	<insert id="insert">	
 		INSERT INTO MYBATISTBL (COL1, COL2, COL3) VALUES (#{col1} , #{col2} , #{col3} )
 	</insert>
+	<select id="select" resultType="mybatis.MybatisTblVO">
+		SELECT * FROM MYBATISTBL
+	</select>
 </mapper>
