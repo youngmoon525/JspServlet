@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import mybatis.MybatisTblDAO;
+import mybatis.MybatisTblVO;
+
 @WebServlet("*.mytbl")
 public class MybatisTblController extends HttpServlet {
 	//1.url을 통해 파라메터를 입력받아 4가지 동작이 전부 잘 되는지 테스트
@@ -15,12 +18,19 @@ public class MybatisTblController extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String path = req.getServletPath();
+		MybatisTblDAO dao = new MybatisTblDAO();
 		if(path.equals("/insert.mytbl")) {//CREATE
-			//1.DAO호출
-			//2.페이지 요청(URL요청)
+			
+			MybatisTblVO vo = new MybatisTblVO();
+			vo.setCol1(req.getParameter("col1"));
+			vo.setCol2(req.getParameter("col2"));
+			vo.setCol3(req.getParameter("col3"));
+			System.out.println(dao.insert(vo));
+			
 		}else if(path.equals("/update.mytbl")) {//U
 			//1.DAO호출
 			//2.페이지 요청(URL요청)
+			System.out.println("update까지옴");
 		}else if(path.equals("/delete.mytbl")) {//D
 			//1.DAO호출
 			//2.페이지 요청(URL요청)

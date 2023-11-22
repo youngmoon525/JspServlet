@@ -26,9 +26,10 @@ public class MybatisTblDAO {
 	}
 	
 	public int insert(MybatisTblVO vo) {
-		int result = sql.insert("" , vo);
+		int result = sql.insert("mytbl.insert" , vo);
 		return result;
 	}
+	
 	public int update(MybatisTblVO vo) {
 		return sql.update("" , vo);
 	}

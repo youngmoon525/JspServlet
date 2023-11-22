@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mytbl">
+	<insert id="insert">	
+		INSERT INTO MYBATISTBL (COL1, COL2, COL3) VALUES (#{col1} , #{col2} , #{col3} )
+	</insert>
+</mapper>
