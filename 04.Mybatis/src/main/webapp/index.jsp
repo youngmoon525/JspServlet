@@ -44,11 +44,5 @@
 	</c:forEach>
 	</table>
 	
-	<script type="text/javascript">
-		function test() {
-			
-		}
-		
-	</script>
 </body>
 </html>
