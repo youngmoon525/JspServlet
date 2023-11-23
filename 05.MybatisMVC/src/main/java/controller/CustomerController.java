@@ -15,7 +15,6 @@ public class CustomerController extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		rd = req.getRequestDispatcher("customer/list.jsp");
-		req.setAttribute("str", "abc");
 		rd.forward(req, resp);
 	}
 
