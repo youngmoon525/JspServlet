@@ -28,8 +28,8 @@ public class CustomerController extends HttpServlet {
 		}else if(path.equals("delete.cu")) {
 			int customer_id = Integer.parseInt( req.getParameter("customer_id") );
 			dao.delete(customer_id);
+			resp.sendRedirect("list.cu");//url을 요청(응답)
 			
-			resp.sendRedirect("list.cu");
 		}else if(path.equals("insert.cu")) {
 			CustomerVO vo = new CustomerVO();
 			vo.setEmail(req.getParameter("email"));
