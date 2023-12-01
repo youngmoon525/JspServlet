@@ -20,7 +20,6 @@
         <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     </head>
    <body id="page-top">
-
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
             <div class="container px-4 px-lg-5">
@@ -34,6 +33,8 @@
                         <li class="nav-item"><a class="nav-link" href="list.hr">HR조회</a></li>
                         <li class="nav-item"><a class="nav-link" href="list.jstl">JSTL연습</a></li>
                         <li class="nav-item"><a class="nav-link" href="list.sg">혼자 해보기</a></li>
+                        <li class="nav-item">
+<input type="number" step="0.1"></a></li>
                     </ul>
                 </div>
             </div>
