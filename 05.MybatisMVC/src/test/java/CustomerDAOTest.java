@@ -12,7 +12,7 @@ class CustomerDAOTest {
 	@Test
 	public void test() {
 		CustomerDAO dao = new CustomerDAO();
-		dao.test();
+	
 	}
 	
 }

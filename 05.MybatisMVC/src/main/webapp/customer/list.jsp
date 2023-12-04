@@ -7,6 +7,8 @@
 
  <section class="page-section">
  	<div class="container">
+ 	
+ 	<!-- foreach , mapper  , join ,   -->
  	 
  	 	<button type="button" class="btn btn-dark align-middle" id="insertModalBtn">신규 추가</button>
  	 

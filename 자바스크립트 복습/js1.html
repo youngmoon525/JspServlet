@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js1</title>
+</head>
+<body>
+    <h1>연습</h1>
+    <p>자바스크립트는 자바스크립트 영역에서 작업을 한다.</p>
+    <P>기본형 : number(숫자) , string(문자열) , boolean(논리형) , undefined(자료형을 지정하지 않으면 오류가 발생함) , null(값이 유효하지 않을 때의 유형)</P>
+    <P>기본형 : array(배열) , object(객체)</P>
+
+    <script>
+        //document.write("Hello JavaScript!");
+        //var 변수명; 또는 var 변수명 = 값;
+        var str = 'hello';
+        var num = 100;
+        var bool = true;
+        var undif ;
+        var nullv = null;
+        console.log(str);
+        console.log(num);
+        console.log(bool);
+        console.log(undif);
+        console.log(nullv);
+
+
+        var result1 = 1 == 1; 
+        var result2 = 2 == 1;
+
+        console.log(result1);
+        console.log(result2);
+
+        //vscode 한줄복사 : shift + alt + 방향키
+        var result3 = 10 > 5 ? "왼쪽이 크다" : "오른쪽이 크다";
+        console.log(result3);
+
+        //num1과 num2에 각각 30 과 40을 담아 초기화 하고 어떤 숫자가 더 큰지 비교하는 삼항연사자 사용하기.
+        //30이크면 30!이라는 문자열이 콘솔에 출력. , 40!
+        //만약에 나중에 숫자가 50 ,60으로 각각바뀐다면?
+        var num1 = 30;
+        var num2 = 40;
+        console.log( num1 > num2 ? num1+"!"  : num2+"!" );
+
+
+        //var , let , const 는 전부 변수의 역할을 담당.
+        //3개의 차이점.
+        //2015 이전까지는 var만 사용했음. ECMAScript
+        //자바스크립트의 역할이 커지면서 ↑ + 객체지향을 강제함. ( TypeScript )
+        //키워드:   재선언 , 재할당
+        //var  :     O    ,  O    //변수
+        //let  :     X    ,  O    //자바와 비슷한 변수
+        //const:     X    ,  X    //상수
+
+        //재선언이 가능하기 때문에 혼동이 많이됨.
+        var numV = 10;
+        console.log(numV);
+        var numV = 20;
+        console.log(numV);
+
+        let numL = 10;
+        console.log(numL);
+        //let numL = 20; Uncaught SyntaxError: Identifier 'numL' has already been declared 오류 발생 이미 있는 변수는 사용 x
+        numL = 30;
+        console.log(numL);
+
+
+        const numC = 10;
+        //const numC = 20;
+        //numC = 20; // Uncaught TypeError: Assignment to constant variable. 상수는 변경이 불가능하다.
+
+        //TypeOf()함수
+        //자바스크립트에서 제공하는 함수로 괄호 안에 값이나 변수를 넣으면 어떤 자료형인지 알려줌.(return)
+        //C,Java등의 언어에서는 이미 타입(변수)이 주어졌기때문에 Object를 제외하고는 타입추론이 빈번하게 발생하지 않음.
+        //정수와 실수를 묶어서 숫자형
+
+        //Escape도 똑같음. ( \ <- )
+        console.log( typeof(10) );
+        console.log( typeof('10') );
+        console.log( typeof(3.14) );
+        console.log( '\\' );
+        console.log( ' \' ' );
+        console.log('\t aaa');
+        console.log('(\\(\\');
+        console.log('( -.-)');
+        console.log(' O_(\")(\")');
+
+        
+        var name = "김이름";
+        var classNumber = 201; // 202호반 김이름님 환영합니다. <= 로그
+        //기존 방법은 변수나 식이 복잡해지면 + 누락 등으로 오타 확률이 있어 오류가 발생함.
+        console.log ( classNumber + ' 호반 ' + name + ' 님 환영합니다.')
+        //백팃 ` : 변수나 식이 복잡해도 변수를 그대로 가져다 쓸수있어서 오류 발생이 낮음.
+        console.log (` ${classNumber} 호반 ${name} 님 환영합니다. `);
+
+        //자바스크립트는 언어가 아니다. ( 다른 언어와는 다르게 프로그램 실행 중 자료형이 변환되는 자동 형 변환이 있음.?)
+        
+        //int num = 20;
+        //String name = num(x);//String
+
+        //자바스크립트는 처음 선언할 때 자료형 지정이 없기 때문에 일관성을 유지하는게 어려움.
+        var num = 20; //숫자형
+        var num = '이름';//문자열
+
+        var one = "20";
+        var two = 40;
+
+        console.log(one + two.toString());//?
+        console.log(one - two);// 문자열을 사칙 연산에 사용하면 자동으로 숫자형으로 변환이됨. ( 결합 )
+
+        //Number() , parseInt() , parseFloat()
+        //문자열 뿐만 아니라 null과 undefind을 포함해서 모든 자료형을 숫자로 변환하는 함수
+        //true 1 , false 0
+        //null 0
+        //undefined : NaN
+        //문자열 0이 앞에있으면 제거 후 숫자로 바꿈.
+        console.log ( Number("20") + 40  );
+        console.log ( parseInt("20"));
+        console.log ( parseFloat("3.14"));
+
+        let userInput = prompt("값을 입력해주세요."); // Scanner.nextLine();
+        console.log(typeof(userInput));
+        //userInput의 타입이 콘솔창에 출력되게 해보세요.
+        //userInput의 타입이 숫자형이면 해당 값에 + 20을 하고 출력해보기. ( 삼항연산자 )
+
+
+
+
+    </script>
+
+
+</body>
+</html>
