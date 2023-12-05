@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script
+  src="https://code.jquery.com/jquery-3.7.1.js"
+  integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+  crossorigin="anonymous"></script>
+
+    <style>
+        .available{
+            background-color: blue;
+        }
+        .disable{
+            background-color: red;
+        }
+
+    </style>
+
+</head>
+<body>
+    <p id="id1">아이디1</p>
+    <p class="id2">아이디1</p>
+
+    <form action="#" method="get">
+        <table>
+            <tr>
+                <th>성명</th>
+                <th>아이디</th>
+            </tr>
+            <tr>
+                <td><input type="text" name="name" id="name"  /></td>
+                <td><input type="text" name="id" id="id" /></td>
+                <td><a onclick="clickFn()"> 클릭 </a></td>
+            </tr>
+            
+        </table>
+    </form>
+
+    <script>
+        function clickFn(){
+            //클릭 a태그 누르면
+            //name과 id를 체크해서 글자수가 각각 4글자 이상이 아니면 배경색을 빨간색으로 바꿈. 
+            //둘다 맞으면 클릭의 배경색이 파란색으로 바뀌고 '회원가입 가능' <- alert뜨게
+            //1.접근※
+            //2.접근후값 가지고오기
+            //3.제어문을 이용한 제어
+
+
+            //$('#name');
+
+            //addClass('');     // add();
+            //removeClass(''); // remove();
+            //hasClass(); // contains
+            //$('#name').toggleClass('available');
+            // $('#name').val(); <=해당 내용을 가지고 네임의 배경색을 바꾸기 처리
+
+        }
+        //$('선택자')
+        //아이디 선택자 : $('#id명')
+        //클래스 선택자 : $('.클래스명')
+        //요소(태그) 선택자 : $(요소)
+        //그룹 선택자 $(선택자1 , 선택자2)... n개의 요소 선택
+        //종속 선택자 $(p선택자 값)
+
+        //인접 관계 선택자
+        //$(접근).perent's'(); 선택 후 부모를 가져옴. 
+        //$(접근).children(); 모든 자식요소 가져옴(선택)
+        //$(접근).siblings(); 형제 요소 선택
+
+    </script>
+
+</body>
+</html>
