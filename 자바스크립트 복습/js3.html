@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        h1 {
+            font-size: 4rem;
+        }
+        .clicked{
+            background-color: yellow;
+        }
+        .red{
+            color: red;
+        }
+    </style>
+
+</head>
+<body>
+    <h1 id="title" class="kym">TITLE</h1>
+    <div id="grp">
+        <p>이름 : 김이름</p>
+        <p>직업 : 개발자</p>
+        <p class="btn">연락처 : 0000</p>
+        <p id="title_sub">타이틀 친구</p>
+    </div>
+    <form action="#" method="get" name="order">
+        <legend>상품 정보 표기</legend>
+        <ul>
+            <li> 
+                <label>이름</label>
+                <input type="text" name="orderName" id="orderName"/>
+            </li>
+            <li> 
+                <label>상품</label>
+                <input type="text" name="product" id="product" value="pr" />
+            </li>
+        </ul>
+    </form>
+
+    <script>
+        document.querySelector('#orderName');
+        document.querySelector("#orderName").value;//값 가져오기
+        //ex) 폼태그와 input타입에 name속성만있음. id나 class를 주기 부담스러운 상황.
+        console.log(document.order.product.value);
+        //name이나 이런게 아무것도없음
+        console.log(document.forms[0].elements[1].value);
+
+        console.log(document.querySelectorAll("p")[1]);
+        console.log(document.querySelectorAll("p")[2]);
+
+    </script>
+
+    <script>
+        //  title_sub를 클릭하면 title의 글자가 빨간색으로 바뀌게 처리해보기 ( css (class) )
+        const title_sub =  document.querySelector('#title_sub');
+        title_sub.onclick = function(){
+            //title_sub.style.color = "red";
+            title_sub.classList.toggle('red');
+        };
+
+
+        //웹문서에서 원하는 요소를 찾아가는 것 (access) 접근이라고 함  현재)h1의 글자를 가지고 오려면 h1태그까지 '접근'
+        //querySelector(선택자) : 한 개의 값만 반환 
+        //querySelectorAll(선택자) : 메서드 반환 값이 다수이면 모두 []노드 리스트로 반환(저장)
+        //
+        //선택자 : id(#) , class(.) , <h1>..등의 태그 종류는 그냥 씀.
+            
+        //document.querySelector('h1') : 여러개가 있다면 사용이 불가능.
+        //document.querySelectorAll('h1') : 여러개가 노드리스트라는 형태로 옴. 
+        //document.getElementsByTagName("h1")
+        
+        //getid,class,name , getElement vs querySelector
+        //id값이나 calss, 태그 이름을 사용해서 접근하는 방식은 유사함.
+        //querySelector를 이용하면 선택자를 조합해서 접근이 가능하다. (#detail > p) : Jquery와 사용법이 유사해서 배울때 좋음.
+
+        //innerText , innerHTML , textContent 프로퍼티 사용.
+        //innerText : 순수 텍스트를 가져오거나 , 해당 요소에 텍스트를 지정
+        //innerHtml : 태그와 함께 텍스트를 가져오거나, 해당 요소에 태그와 함께 텍스트를 지정
+        //textContent : 텍스트를 가져오되, 화면에 보이는 그대로가 아니라 소스에 있는대로 가져옴.
+
+        // h1 내부에 있는 KYM 이라는 글자를 찾아서 콘솔에 찍을수 있는지?
+        console.log(document.querySelector("#grp").innerText);
+        console.log(document.querySelector("#grp").innerHTML);
+        console.log(document.querySelector("#grp").textContent);
+
+        //var , let , const
+        //접근 후 변수에 담아서 초기화 ( title )
+        const title = document.querySelector('#title');
+        console.log(title.innerText);
+        //title.onclick = () =>
+        //title.addEventListner
+
+        //title을 클릭할때마다 영어와한글로 계속 바뀌게 처리해보기.
+        //모든 태그들은 style이라는 프로퍼티를 가지고 있음.
+        title.onclick = function(){
+            title.classList.toggle("clicked")
+            // if(title.classList.contains("clicked")){
+            //     title.classList.remove("clicked");
+            // }else{
+            //     title.classList.add("clicked");
+            // }
+          
+            
+            //title.style.backgroundColor = "yellow";
+            //title.style.color = "red";
+            // if(title.innerText == 'TITLE'){
+            //     title.innerText = '타이틀';
+            // }else{
+            //     title.innerText = 'TITLE'
+            // }
+        };
+
+
+        
+        
+    </script>
+
+</body>
+</html>
