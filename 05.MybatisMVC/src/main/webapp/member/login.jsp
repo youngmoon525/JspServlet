@@ -115,7 +115,7 @@
 		//error:실행되는 펑션
 		
 		$.ajax({
-			type: 'post' ,
+			method:'post', //여기 제가 잘못넣었어요 type-> method로 수정해주세요 type:json이런거
 			url: 'login.me',
 			data: { user_id:$('#user_id').val()  , user_pw:$('#user_pw').val()  },
 			success: function ( response ) {
@@ -125,6 +125,9 @@
 				alert(req.status + ' 오류! 다시 로그인 시도를 해주세요.');
 			}
 		});
+		
+			
+			
 		
 		
 	}
