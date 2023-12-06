@@ -69,75 +69,67 @@
 
         <div class="card bg-glass">
           <div class="card-body px-4 py-5 px-md-5">
-            <form>
-              <!-- 2 column grid layout with text inputs for the first and last names -->
-              <div class="row">
-                <div class="col-md-6 mb-4">
-                  <div class="form-outline">
-                    <input type="text" id="form3Example1" class="form-control" />
-                    <label class="form-label" for="form3Example1">First name</label>
-                  </div>
-                </div>
-                <div class="col-md-6 mb-4">
-                  <div class="form-outline">
-                    <input type="text" id="form3Example2" class="form-control" />
-                    <label class="form-label" for="form3Example2">Last name</label>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Email input -->
+            <form method="post">
+           
               <div class="form-outline mb-4">
-                <input type="email" id="form3Example3" class="form-control" />
-                <label class="form-label" for="form3Example3">Email address</label>
+                <input type="text" id="user_id" name="user_id" class="form-control" placeholder="아이디 입력" />
+                <label class="form-label" for="user_id">아이디</label>
               </div>
 
-              <!-- Password input -->
               <div class="form-outline mb-4">
-                <input type="password" id="form3Example4" class="form-control" />
-                <label class="form-label" for="form3Example4">Password</label>
+                <input type="password" id="user_pw" name="user_pw" class="form-control" placeholder="비밀번호 입력"  />
+                <label class="form-label" for="user_pw">패스워드</label>
               </div>
 
-              <!-- Checkbox -->
-              <div class="form-check d-flex justify-content-center mb-4">
-                <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
-                <label class="form-check-label" for="form2Example33">
-                  Subscribe to our newsletter
-                </label>
-              </div>
+           
+              <a class="btn btn-primary btn-block mb-4" onclick="login();">
+                로그인
+              </a>
 
-              <!-- Submit button -->
-              <button type="submit" class="btn btn-primary btn-block mb-4">
-                Sign up
-              </button>
-
-              <!-- Register buttons -->
-              <div class="text-center">
-                <p>or sign up with:</p>
-                <button type="button" class="btn btn-link btn-floating mx-1">
-                  <i class="fab fa-facebook-f"></i>
-                </button>
-
-                <button type="button" class="btn btn-link btn-floating mx-1">
-                  <i class="fab fa-google"></i>
-                </button>
-
-                <button type="button" class="btn btn-link btn-floating mx-1">
-                  <i class="fab fa-twitter"></i>
-                </button>
-
-                <button type="button" class="btn btn-link btn-floating mx-1">
-                  <i class="fab fa-github"></i>
-                </button>
-              </div>
-            </form>
+             </form>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- Section: Design Block -->
+
+<script type="text/javascript">
+	function login() {
+		if( $('#user_id').val() == ''){
+			alert('아이디를 입력하세요.');
+			$('#user_id').focus();//커서
+			return;
+		}else if( $('#user_pw').val() == ''){
+			alert('비밀번호를 입력하세요.');
+			$('#user_pw').focus();//커서
+			return;
+		}
+		//페이지를 새로 요청x -> Controller나 다른 API에 데이터만 따로 요청을 하는 형태 -> 비동기 통신
+		//XMLHttpRequest객체 , Http객체 : 코드가 조금 복잡함.
+		//Jquery: Ajax
+		//type: method
+		//url:어디에 요청할껀지.
+		//data:어떤것을 전송할껀지.
+		//success:실행되는 펑션
+		//error:실행되는 펑션
+		
+		$.ajax({
+			type: 'post' ,
+			url: 'login.me',
+			data: { user_id:$('#user_id').val()  , user_pw:$('#user_pw').val()  },
+			success: function ( response ) {
+				console.log(response);
+			},
+			error: function (req , text) {		
+				alert(req.status + ' 오류! 다시 로그인 시도를 해주세요.');
+			}
+		});
+		
+		
+	}
+
+</script>
 
 <%@ include file="/include/footer.jsp"%>
 </html>
