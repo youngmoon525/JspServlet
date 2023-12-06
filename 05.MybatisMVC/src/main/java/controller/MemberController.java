@@ -13,6 +13,13 @@ import member.MemberVO;
 
 @WebServlet("*.me")
 public class MemberController extends HttpServlet {
+	
+//	@RespuestMapping("/loginpage.me")
+//	public String loginPage() {
+//		return "login";
+//	}
+	
+	
 	RequestDispatcher rd;
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
