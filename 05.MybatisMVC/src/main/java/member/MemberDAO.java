@@ -10,7 +10,7 @@ public class MemberDAO extends MybatisConnection implements MemberService{
 
 	@Override
 	public int member_join(MemberVO vo) {
-		return 0;
+		return sql.insert("me.join" , vo);
 	}
 
 	@Override

@@ -16,7 +16,7 @@
           <div class="card-body p-4 p-md-5">
             <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">회원가입</h3>
 
-            <form class="px-md-2">
+            <form class="px-md-2" action="join.me" method="post" autocomplete="off">
 
               <div class="form-outline mb-4">
                 <input type="text" id="user_id" name="user_id" class="form-control" />
@@ -78,7 +78,7 @@
 
                 </div>
               </div>
-              <a class="btn btn-success btn-lg mb-1">회원가입</a>
+              <a class="btn btn-success btn-lg mb-1" id="btn_join">회원가입</a>
 
             </form>
 
@@ -102,6 +102,12 @@
 		        }
 		    }).open();
 	});
+	
+	$('#btn_join').click(function () {
+		console.log('유효성 검사가 올바르게 진행되었는지??');
+		$('form').submit();
+	});
+	
 </script>
 
 

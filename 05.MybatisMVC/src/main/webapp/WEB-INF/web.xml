@@ -32,4 +32,19 @@
     	<location>/500.er</location>
     </error-page>
   
+  <!-- 한글 인코딩 Strat -->
+<filter>
+	<filter-name>encodingFilter</filter-name>
+	<filter-class>common.EncodingFilter</filter-class>
+	<init-param>
+		<param-name>encoding</param-name>
+		<param-value>UTF-8</param-value>
+	</init-param>
+</filter>
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+<!-- 한글 인코딩 End -->
+  
 </web-app>
