@@ -18,10 +18,23 @@
 
             <form class="px-md-2" action="join.me" method="post" autocomplete="off">
 
-              <div class="form-outline mb-4">
-                <input type="text" id="user_id" name="user_id" class="form-control" />
+           
+
+      <div class="row mb-4 pb-2 pb-md-0 mb-md-3">
+                <div class="col-md-6">
+                  <div class="form-outline">
+                       <input type="text" id="user_id" name="user_id" class="form-control" />
                 <label class="form-label" for="user_id">아이디</label>
+                  </div>
+                </div>
+                  <div class="col-md-6">
+                  <div class="form-outline">
+                    <a id="check_id" class="btn btn-primary"> 아이디 중복 확인 </a>
+                  </div>
+                </div>
               </div>
+
+
 
               <div class="row mb-4 pb-2 pb-md-0 mb-md-3">
                 <div class="col-md-6">
@@ -104,9 +117,46 @@
 	});
 	
 	$('#btn_join').click(function () {
+		if(! $('#user_id').hasClass('checked') ) alert('아이디 중복확인을 하세요');  return;
+		
 		console.log('유효성 검사가 올바르게 진행되었는지??');
 		$('form').submit();
 	});
+	
+	
+	$('#check_id').click(function () {
+		//1. input타입에 있는 실제 사용자가 입력한 아이디를 콘솔창에 찍을수있는지
+		//2. ajax : 페이지 새로고침 없이 아이디만 중복확인을 해야함.
+		console.log( $('#user_id').val());
+		let user_id = $('#user_id').val();
+		
+		if(user_id == ''){
+			alert('아이디를 입력해주세요!')
+			return ;
+		}else if(user_id.length < 5){
+			alert('5글자 이상 입력해주세요.');
+			return ;
+		}
+		
+		
+		$.ajax({
+			url: 'idCheck.me',
+			data: { user_id:user_id },
+			success: function (res) {
+				//성공했을때처리!
+				
+			},error:function(req){
+				console.log(req.status);
+			}
+		});
+		
+	
+		//ajax통신도 결국에 어떤 요청을 하는 행위: 아이디에 5글자 이상 입력이 되면 전송처리가 되게 끔만들어야함.
+		
+		
+	});
+	
+	
 	
 </script>
 

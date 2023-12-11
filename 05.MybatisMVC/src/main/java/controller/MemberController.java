@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import member.MemberDAO;
+import member.MemberDAO_Id;
 import member.MemberService;
 import member.MemberVO;
 
@@ -61,6 +62,18 @@ public class MemberController extends HttpServlet {
 			vo.setPost(req.getParameter("post"));
 			service = new MemberDAO();
 			System.out.println( service.member_join(vo) );
+			
+		}else if(req.getServletPath().equals("/idCheck.me")) {
+			System.out.println(req.getParameter("user_id"));
+			
+			// /[^a-z0-9]/g; 
+			
+			service = new MemberDAO_Id();
+			service.member_idCheck(req.getParameter("user_id"));
+			//sql매퍼를 이용해서 이미 있는 아이디라면 1 , 없는 아이디는 0을 콘솔창에 출력(syso)
+			//javascript가 받을수있게 응답처리
+			//javascript 콘솔에 1또는0을 출력
+			
 			
 		}
 			
