@@ -15,7 +15,7 @@ public class KymController extends HttpServlet {
 	
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-	
+		System.out.println(req.getParameter("param"));
 		resp.getWriter().println("응답 처리 : jsonData.....");
 		
 	}
