@@ -8,7 +8,12 @@
 	</select>
 	
 	<select id="select" resultType="customer.CustomerVO">
-		SELECT * FROM CUSTOMER
+		SELECT * FROM CUSTOMER 
+		<if test="query != null">
+			WHERE CUSTOMER_ID LIKE '%'||#{query}||'%'
+			or UPPER(NAME) LIKE '%'||UPPER(#{query})||'%'
+		</if>
+		
 	</select>
 	
 	<delete id="delete">

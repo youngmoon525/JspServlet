@@ -17,6 +17,7 @@
   </environments>
   <mappers>
     <mapper resource="mappers/member-mapper.xml"/>
+    <mapper resource="mappers/cus-mapper.xml"/>
   </mappers>
 
 </configuration>
